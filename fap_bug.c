@@ -38,7 +38,7 @@ fap inserer(fap f, int element, int priorite)
     }
   return f;
 }
-  
+
 fap extraire(fap f, int *element, int *priorite)
 {
   fap courant;
@@ -63,6 +63,7 @@ int est_fap_vide(fap f)
 void
 detruire_fap(fap f)
 {
-  if (f != NULL)
+  if (f != NULL){
+      detruire_fap(f->prochain);
       free(f);
 }
